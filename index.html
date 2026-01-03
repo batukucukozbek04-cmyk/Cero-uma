@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>💙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:"Segoe UI", Arial, sans-serif;
+  background:linear-gradient(to bottom,#a8d8ff,#eaf6ff);
+}
+
+.card{
+  width:360px;
+  height:620px;
+  background:linear-gradient(to bottom,#f2f8ff,#e6f0ff);
+  border-radius:42px;
+  padding:22px;
+  box-shadow:0 30px 60px rgba(0,0,0,.25);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.photo-box{
+  width:100%;
+  height:260px;
+  border-radius:28px;
+  border:3px solid #7bbcff;
+  overflow:hidden;
+  margin-bottom:26px;
+}
+.photo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.question-box{
+  padding:10px 20px;
+  border-radius:30px;
+  border:2px solid #7bbcff;
+  margin-bottom:44px;
+  background:#ffffffcc;
+}
+.question-text{
+  font-size:16px;
+  font-weight:600;
+  letter-spacing:.6px;
+  background:linear-gradient(to right,#2f6fb2,#5fa8e6);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.buttons{
+  width:100%;
+  height:180px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+
+button{
+  padding:14px 34px;
+  border-radius:32px;
+  border:2px solid #c3b6ff;
+  background:#f2eeff;
+  color:#6b5fc7;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transform:none !important;
+  transition:none !important;
+}
+
+#yes{
+  position:relative;
+}
+
+#no{
+  position:relative;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="photo-box">
+    <img src="foto1.jpg" class="photo">
+  </div>
+
+  <div class="question-box">
+    <span class="question-text">Beni affedebilir misin, bitanem?</span>
+  </div>
+
+  <div class="buttons">
+    <button id="yes" onclick="goSecond()">EVET</button>
+    <button id="no">HAYIR</button>
+  </div>
+
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseenter", moveNo);
+noBtn.addEventListener("mousedown", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+
+function moveNo(){
+  noBtn.style.position="fixed";
+
+  const w=noBtn.offsetWidth;
+  const h=noBtn.offsetHeight;
+
+  const maxX=window.innerWidth-w-10;
+  const maxY=window.innerHeight-h-10;
+
+  noBtn.style.left=Math.random()*maxX+"px";
+  noBtn.style.top=Math.random()*maxY+"px";
+}
+
+function goSecond(){
+  window.location.href="evet.html";
+}
+</script>
+
+</body>
+</html>
